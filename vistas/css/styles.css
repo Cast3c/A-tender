@@ -1,0 +1,186 @@
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #b4bec9;
+    padding-bottom: 40px;
+    align-items: center;
+    position: fixed;
+}
+
+.main-container > .login{
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    background-color: #131426;
+    padding: 20px;
+    color: #15bf81;
+    font-weight: 700;
+    font-size: 25px;
+    border: solid 15px #15bf81;
+    border-radius: 15px;
+    box-shadow: 9px 6px rgba(19, 20, 38, 0.1);
+}
+
+.login > .title{
+    color: #f2295f;
+    font-style: oblique;
+}
+
+.container-button{
+    width: auto;
+    max-height: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.title{
+    color: #f2295f;
+    font-style: oblique;
+    font-weight: 700;
+}
+.topnav{
+    background-color: #15bf81;
+}
+
+.sidenav{
+    background-color: #15bf81;
+    height: 100%;
+    width: 300px;
+}
+
+.content-box{
+    height: auto;
+    background-color: white;
+    border: 3px solid #15bf81;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.content-box > .title{
+    color: #f2295f;
+    font-weight: 500;
+    font-style: oblique;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+
+}
+
+
+.field-busqueda{
+    min-height: 10vh;
+    max-height: 25vh;
+    max-width: 30vw;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.form-container{
+    padding: 10px;
+}
+
+.column > .title{
+    color: #f2295f;
+    font-weight: 300;
+    font-style: oblique;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.content-table{
+    border: #f2295f solid 3px;
+    border-radius: 15px;
+    color: #131426;
+    padding: 10px;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+
+.icon{
+    color: #f2295f;
+}
+
+.main-container > .hero-body{
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.form-inline{
+    display: inline-flex;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    max-height: 70vh;
+    min-height: 40vh;
+    min-width: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.card-header{
+    z-index: 1;
+}
+
+.card-content{
+    z-index: -1;
+}
+
+.card-footer{
+    padding: 10px;
+    z-index: 1;
+}
+
+.text-center{
+    display: flex;
+    justify-content: center;
+}
+
+.container-404{
+    height: 100%;
+    width: 100%;
+    background-color: #15bf81;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-404{
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    min-width: 250px;
+    background-color: #131426;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

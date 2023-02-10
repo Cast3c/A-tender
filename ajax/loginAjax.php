@@ -1,0 +1,21 @@
+<?php 
+
+    $peticionAjax= true;
+
+    require_once "../config/APP.php";
+
+    if(isset($_POST['token']) && ($_POST['usuario'])){
+        
+        /*------ Instancia al controlador ------- */
+        require_once "../controladores/loginControlador.php";
+        $ins_lo= new loginControlador();
+        
+        echo $ins_lo->cerrar_sesion_controlador();
+    } else {
+        session_start(['name'=>'Tapp']);
+        session_unset();
+        session_destroy();
+        header("Location: ".SERVERURL."login/");
+        exit();
+    }
+    
