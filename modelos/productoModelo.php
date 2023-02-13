@@ -7,15 +7,15 @@
         /*------ Modelo agregar producto ------*/
         protected static function agregar_producto_modelo($datos){
 
-            $sql = mainModel::conectar()->prepare("INSERT INTO productos(nomProducto, precioCosto, precioVenta, fechaCreacion, idEmpaque, idVendedor, proveedores_idproveedores) VALUES (:nombre, :val_costo, :val_venta, :fecha, :empaque, :vendedor, :proveedor)");
+            $sql = mainModel::conectar()->prepare("INSERT INTO productos(nomProducto, precioCosto, precioVenta, fechaCreacion, idEmpaque, proveedores_idproveedores, id_cat) VALUES (:nombre, :val_costo, :val_venta, :fecha, :empaque, :proveedor, :categoria)");
 
             $sql->bindParam(":nombre",$datos['nombre']);
             $sql->bindParam(":val_costo",$datos['val_costo']);
             $sql->bindParam(":val_venta",$datos['val_venta']);
             $sql->bindParam(":fecha",$datos['fecha']);
             $sql->bindParam(":empaque",$datos['empaque']);
-            $sql->bindParam(":vendedor",$datos['vendedor']);
             $sql->bindParam(":proveedor",$datos['proveedor']);
+            $sql->bindParam(":categoria",$datos['categoria']);
             $sql->execute();
 
             return $sql;

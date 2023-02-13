@@ -84,47 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="lista-productos">
-                    <div class="container-1 product-cont">
-                        <div class="produc-title">Producto</div>
-                        <div class="produc-info">Info</div>
-                        <div class="produc-cant">num</div>
-                        <span class="select-cant">
-                            <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                            <span class="sqr-cant"></span>
-                            <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                        </span>
-                    </div>
-                    <div class="container-1 product-cont">
-                        <div class="produc-title">Producto</div>
-                        <div class="produc-info">Info</div>
-                        <div class="produc-cant">num</div>
-                        <span class="select-cant">
-                            <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                            <span class="sqr-cant"></span>
-                            <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                        </span>
-                    </div>
-                    <div class="container-1 product-cont">
-                        <div class="produc-title">Producto</div>
-                        <div class="produc-info">Info</div>
-                        <div class="produc-cant">num</div>
-                        <span class="select-cant">
-                            <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                            <span class="sqr-cant"></span>
-                            <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                        </span>
-                    </div>
-                    <div class="container-1 product-cont">
-                        <div class="produc-title">Producto</div>
-                        <div class="produc-info">Info</div>
-                        <div class="produc-cant">num</div>
-                        <span class="select-cant">
-                            <i class="fa-solid fa-square-plus" id="plus-btn"></i>
-                            <span class="sqr-cant"></span>
-                            <i class="fa-solid fa-square-minus" id="minus-btn"></i>
-                        </span>
-                    </div>
+                <div class="lista-productos">                
                 </div>
             </div>
         </div>

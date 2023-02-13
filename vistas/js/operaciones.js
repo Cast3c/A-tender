@@ -198,20 +198,20 @@ function listaProductos()
                 result +=
                     '<div class="container-1 product-cont">'+
                         '<div class="produc-title">'+data[i][1]+'</div>'+
-                        '<div class="produc-info">'+data[i][5]+'-'+data[i][3]+'-'+data[i][4]+'</div>'+
+                        '<div class="produc-info">'+data[i][5]+'-'+data[i][4]+'</div>'+
                         '<div class="produc-cant">'+data[i][2]+'</div>'+
-                        '<span class="select-cant">'+
+                        /* '<span class="select-cant">'+
                             '<i class="fa-solid fa-square-plus" id="plus-btn"></i>'+
                             '<span class="sqr-cant"></span>'+
                             '<i class="fa-solid fa-square-minus" id="minus-btn"></i>'+
-                        '</span>'+
+                        '</span>'+ */
                     '</div>'            
             }
             $(".lista-productos").html(result) 
         } else {
             alert(data);
         }
-    })
+    });
 };
 
 //================== funcion listar categorias ==================//

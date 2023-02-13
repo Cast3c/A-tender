@@ -23,9 +23,9 @@ if ($_SESSION['rol_Tapp'] != 1) {
       </form>
       <div class="list-config">
         <?php
-        require_once "./controladores/productoControlador.php";
-        $insta_configProduc = new productoControlador();
-        echo $insta_configProduc->listar_categoria_producto();
+        require_once "./controladores/configProducControlador.php";
+        $insta_configProduc = new configProducControlador();
+        echo $insta_configProduc->listar_categ_products();
         ?>
       </div>
     </div>
@@ -75,9 +75,34 @@ if ($_SESSION['rol_Tapp'] != 1) {
     </div>
   </div>
   <div class="container-1 config-prod">
-    <span class="title"></span>
-    <form action="" method="post"></form>
-    <div class="list-config"></div>
+    <span class="title">Nuevo producto</span>
+    <fieldset>
+      <form action="" method="post"></form>
+      <legend>Llena todos los campos</legend>
+      <div class="new-product">
+        <input type="text" name="" id="" placeholder="Ingresa el nombre del producto">
+        <input type="number" name="" id="" placeholder="Ingresa el valor de compra">
+        <input type="number" name="" id="" placeholder="Igresa el valor de venta">
+        <select name="" id="" id="idEmpaque">
+          <option value="">Selecciona un tipo de empaque</option>
+        </select>
+        <select name="" id="" id="idProveedor">
+          <option value="">Selecciona un proveedor</option>
+        </select>
+        <select name="" id="" id="idCat">
+          <option value="">Selecciona una categoria</option>
+        </select>
+      </div>
+      <div class="group-btn">
+        <button type="submit" class="btn-config save-btn">Guardar</button>
+        <button type="submit" class="btn-config cancel-btn">Cancelar</button>
+      </div>
+      </form>
+      <form class="FormularioAjax" method="POST" action="<?php echo SERVERURL?>ajax/productoAjax.php?value=4" enctype="multipart/form-data" data-form="save" autocomplete="off">
+        <input type="file" name="fileProduct" id="" >
+        <input type="submit" value="Subir Archivo">
+      </form>
+    </fieldset>
   </div>
 </div>
 <!--  <div class="main-container">

@@ -134,16 +134,18 @@ class productoControlador extends productoModelo
                 $val_costo    = !empty($reg[1]) ? ($reg[1]) : '';
                 $val_venta    = !empty($reg[2]) ? ($reg[2]) : '';
                 $empaque      = !empty($reg[3]) ? ($reg[3]) : '';
-                $id_proveedor = !empty($reg[5]) ? ($reg[5]) : '';
+                $id_proveedor = !empty($reg[4]) ? ($reg[4]) : '';
+                $categoria    = !empty($reg[5]) ? ($reg[5]) : '';
 
                 $fecha = date('Y-m-d');
                 $datos_producto_reg = [
                     "nombre" => $nombre,
                     "val_costo" => $val_costo,
                     "val_venta" => $val_venta,
-                    "empaque" => $empaque,
                     "fecha" => $fecha,
-                    "proveedor" => $id_proveedor
+                    "empaque" => $empaque,
+                    "proveedor" => $id_proveedor,
+                    "categoria" => $categoria
                 ];
 
                 $result = productoModelo::agregar_producto_modelo($datos_producto_reg);

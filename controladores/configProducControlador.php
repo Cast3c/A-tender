@@ -580,6 +580,40 @@ class configProducControlador extends configProducModelo
     #===================================================================#   
 
     public function listar_categ_products(){
-        
+        $lista_categoria = configProducModelo::listar_categoria_producto();
+        $tabla = "";
+
+        if ($lista_categoria->rowCount()) {
+            $tabla .= '
+                <div class="card-content">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="">
+                            <th> # </th>
+                            <th>Categoria</th>
+                            <th>Editar</th>
+                            <th>Borrar</th>
+                        </tr>
+                    </thead>
+                <tbody>';
+            $contador = 1;
+
+            foreach($lista_categoria as $row){
+                $tabla .= '
+                <tr class="">
+                    <td>' . $contador . '</td>
+                    <td>' . $row['nomCategoria'] . '</td>
+                    <td><a href="' . SERVERURL . 'updt-user/' . mainModel::encryption($row['id']) . '" class"button"><i class="icon fa-regular fa-pen-to-square"></i></a></td>
+                    <td><a href="" class"button"><i class="icon fa-solid fa-trash"></i></a></th>
+                </tr>';
+                $contador++;
+            }
+            $tabla .= '
+                        </tbody>
+                    </table>
+                </div>';
+        } 
+       return $tabla; 
+
     }
 }
