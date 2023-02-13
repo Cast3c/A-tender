@@ -16,6 +16,4 @@ A-tender es una aplicacion todo en uno, para administracion de ventas y operacio
  - Financial Reports and Tax Management
  - Multi-Location Support
 
-# Functions
-
 # Images
