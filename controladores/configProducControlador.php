@@ -578,4 +578,8 @@ class configProducControlador extends configProducModelo
     }
     /*------    FIN CONTROLADOR PROVEEDORES     ------*/
     #===================================================================#   
+
+    public function listar_categ_products(){
+        
+    }
 }

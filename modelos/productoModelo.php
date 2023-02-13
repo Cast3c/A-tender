@@ -21,15 +21,24 @@
             return $sql;
         }
 
+        /*--------- Lista producto ---------*/
         protected static function consultar_producto(){
-            $consulta = ("SELECT * FROM productos" );
+            $consulta = ("SELECT * FROM lista_productos" );
             $sql= mainModel::ejecutar_consulta_simple($consulta);
             return $sql;
         }
 
+        /*--------- busqueda de producto ---------*/
         protected static function busqueda_producto($buscar){
             $consulta = ("SELECT * FROM lista_productos WHERE (nomProducto LIKE '%$buscar$' OR idproductos LIKE '%$buscar%' OR precioVenta LIKE '%$buscar%' OR nombreEmpaque LIKE '%$buscar%' OR nomProveedor LIKE '%$buscar%') ORDER BY nomProducto");
 
+            $sql = mainModel::ejecutar_consulta_simple($consulta);
+            return $sql;
+        }
+
+        /*--------- categoria producto ---------*/
+        protected static function lista_categorias(){
+            $consulta = ("SELECT * FROM categoria");
             $sql = mainModel::ejecutar_consulta_simple($consulta);
             return $sql;
         }

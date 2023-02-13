@@ -28,11 +28,17 @@ if ($value==1){
     } else {
         header("Location:".SERVERURL."home/");
     }
-}else{
+}else if ($value==5){
+    echo $insta_produc->listar_productos_controlador();
+}else if ($value==6){
+    echo $insta_produc->listar_categoria_producto();
+}
+else{
     session_start(['name' => 'Tapp']);
     session_unset();
     session_destroy();
     header("Location: " . SERVERURL . "login/");
     exit();
 }
+
 

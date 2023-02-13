@@ -21,7 +21,13 @@ if ($_SESSION['rol_Tapp'] != 1) {
           <input type="file" name="" id="file_input">
         </fieldset>
       </form>
-      <div class="list-config"></div>
+      <div class="list-config">
+        <?php
+        require_once "./controladores/productoControlador.php";
+        $insta_configProduc = new productoControlador();
+        echo $insta_configProduc->listar_categoria_producto();
+        ?>
+      </div>
     </div>
   </div>
   <div class="container-1 config-prod">

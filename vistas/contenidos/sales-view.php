@@ -44,11 +44,6 @@
                 </div>
                 <div class="carrito-compra">
                     <div class="selected-prods">
-                        <?php 
-                        require "./controladores/productoControlador.php";
-                        $list_productos = new productoControlador();
-                        
-                        ?>
                         <div class="container-1 prod-list">
                             <span class="produc-title">Producto</span>
                             <span class="produc-info">5</span>

@@ -97,53 +97,18 @@ class productoControlador extends productoModelo
     /* ------ listar productos ------ */
     public function listar_productos_controlador()
     {
-
         $lista_produc = productoModelo::consultar_producto();
-        $tabla = "";
+        $resultado = [];
 
         if ($lista_produc->rowCount()) {
-            
-            $contador = 1;
-            foreach ($lista_produc as $row) {
-                $tabla .= '
-                <tr class="">
-                    <td>' . $contador . '</td>
-                    <td>' . $row['nomProducto'] . '</td>
-                    <td> $' . $row['precioVenta'] . '</td>
-                    <td>' . $row['idEmpaque'] . '</td>
-                    <td>' . $row['idVendedor'] . '</td>
-                    <td>' . $row['proveedores_idproveedores'] . '</td>
-                    <td><a href="' . SERVERURL . 'updt-user/' . mainModel::encryption($row['idproductos']) . '" class"button"><i class="icon fa-regular fa-pen-to-square"></i></a></td>
-                    <td><a href="" class"button"><i class="icon fa-solid fa-trash"></i></a></th>
-                </tr>';
-                $contador++;
+            while ($row = $lista_produc->fetch()) {
+                $resultado[] = $row;
             }
+            return json_encode($resultado);
         } else {
-            $tabla .= '
-            <div class="card-content">
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr class="text-center">
-                        <th> # </th>
-                        <th>Nombre</th>
-                        <th>Precio venta</th>
-                        <th>Empaque</th>
-                        <th>Vendedor</th>
-                        <th>Proveedor</th>
-                        <th>Edit</th>
-                        <th>Borrar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="8" class="text-center">
-                        <h1>No existen productos registrados en el sistema</h1>
-                        </td> 
-                    </tr>
-                </tbody>
-            ';
-        }
-        return $tabla;
+            $mensaje = "No hay productos registrados aun";
+            return json_encode($mensaje);
+        }   
     }
 
     /*------    Controlador agregar producto masivo     ------*/
@@ -223,5 +188,23 @@ class productoControlador extends productoModelo
             $mensaje = "no hay registros";
             return $mensaje;
        }
+    }
+
+    /*--------- Controlador categoria productos ---------*/
+    public function listar_categoria_producto(){
+
+        $lista_categoria = productoModelo::lista_categorias();
+
+        $resultado = [];
+        if ($lista_categoria->rowCount()) {
+            while ($row = $lista_categoria->fetch()) {
+                $resultado[] = $row;
+            }
+            return json_encode($resultado);
+        } else {
+            $mensaje = "No hay categorias registradas";
+            return json_encode($mensaje);
+        }
+        
     }
 }

@@ -40,7 +40,7 @@
     ?>
     <?php 
     
-     include "./vistas/inc/logout.php";
+    /* include "./vistas/inc/logout.php"; */
     
     include "./vistas/inc/script.php";
     

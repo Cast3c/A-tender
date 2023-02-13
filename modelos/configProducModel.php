@@ -110,4 +110,11 @@ class configProducModelo extends mainModel
       return $sql;
    }
    #===================================================================#   
+
+   /* ========= listar categorias de productos =========*/
+   protected static function listar_categoria_producto(){
+      $consulta = ("SELECT * FROM categoria");
+      $sql = mainModel::ejecutar_consulta_simple($consulta);
+      return $sql;
+   }
 }

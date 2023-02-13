@@ -22,6 +22,7 @@
     });
 </script>
 <script src="<?php echo SERVERURL; ?>vistas/assets/js/main.js"></script>
+<script src="<?php echo SERVERURL; ?>vistas/js/operaciones.js"></script>
 <script src="<?php echo SERVERURL; ?>vistas/js/ajax.js"></script>
 <script src="<?php echo SERVERURL; ?>vistas/js/alertas.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

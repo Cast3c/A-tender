@@ -3,6 +3,15 @@ $(document).ready(function(){
     //============ ACCIONES DE LA APP ============//
     //===================================================================================//
 
+    /* ------ lista productos ------ */
+    $(function () {
+        listaProductos();
+    }) 
+
+    $(function () {
+        lista_categorias();
+    })
+
     /*------ funcion busqueda inmediata producto ------*/ 
     $("#buscar_produc").keyup(function()
     {
@@ -51,12 +60,10 @@ $(document).ready(function(){
         var cantProduc   = document.getElementById("cant_product").value;
         asignarProducsFact(idproduct, nomProduct, idUsuario, linVenta, precioProduc, cantProduc)
         sumaTotalPrecios();
-    })
-
-    $(".selected_prods")
+    })   
 
 });
-//===================================================================================//
+
 //============ funcion listar los resultados de la busqueda de clientes ============//
 function listarResultBusquedaClientes(busqueda){
     $.ajax({
@@ -85,9 +92,7 @@ function listarResultBusquedaClientes(busqueda){
         }
     })
 }
-//===================================================================================//
 
-//===================================================================================//
 //============ funcion capturar cliente seleccionado ============//
 function capturaCliente()
 {
@@ -100,9 +105,7 @@ function capturaCliente()
     $("#buscar_cliente").val("");
     $("#sel_cliente").html("");
 }
-//===================================================================================//
 
-//===================================================================================//
 //========= funcion listado de productos para guardar en base de datos =========// 
 function asignarProducsFact(idProduc, producto, usuario, lineaVenta, precio, cantidad )
 {
@@ -134,9 +137,7 @@ function asignarProducsFact(idProduc, producto, usuario, lineaVenta, precio, can
     $("#precio_product").val("");
     $("").reset;
 }
-//===================================================================================//
 
-//===================================================================================//
 //============ funcion guardar transacciones en base de datos ============// 
 function sumaTotalPrecios()
 {
@@ -154,11 +155,9 @@ function sumaTotalPrecios()
     $("#totalFactura").html(total)
     console.log(total);
 }
-//===================================================================================//
 
-//===================================================================================//
 //============ funcion listar los resultados de la busqueda de productos ============//
-function listarResultBusqueda(busqueda)
+function listarResultBusqueda()
 {
     $.ajax({
         url: 'http://localhost/tenderAppLocal/ajax/productoAjax.php?value=3',
@@ -184,25 +183,86 @@ function listarResultBusqueda(busqueda)
             alert(data)
         }     
     })
-}
-//===================================================================================//
+};
 
-//===================================================================================//
+//================== funcion listar productos en vista ventas ==================//
+function listaProductos()
+{
+    $.ajax({
+        url: 'http://localhost/tenderAppLocal/ajax/productoAjax.php?value=5'
+    }).done(function(resp){
+        var data = JSON.parse(resp);
+        var result = "";
+        if (data.length >= 1) {
+            for (let i = 0; i < data.length; i++) {
+                result +=
+                    '<div class="container-1 product-cont">'+
+                        '<div class="produc-title">'+data[i][1]+'</div>'+
+                        '<div class="produc-info">'+data[i][5]+'-'+data[i][3]+'-'+data[i][4]+'</div>'+
+                        '<div class="produc-cant">'+data[i][2]+'</div>'+
+                        '<span class="select-cant">'+
+                            '<i class="fa-solid fa-square-plus" id="plus-btn"></i>'+
+                            '<span class="sqr-cant"></span>'+
+                            '<i class="fa-solid fa-square-minus" id="minus-btn"></i>'+
+                        '</span>'+
+                    '</div>'            
+            }
+            $(".lista-productos").html(result) 
+        } else {
+            alert(data);
+        }
+    })
+};
+
+//================== funcion listar categorias ==================//
+function lista_categorias(){
+    $.ajax({
+        url: 'http://localhost/tenderAppLocal/ajax/productoAjax.php?value=6'
+    }).done(function (resp) {
+        var data = JSON.parse(resp);
+        var result = "";
+        if (data.length >=1 ) {
+            let icon = "";
+            if (data[i][0] == 0) {
+                icon = '<i class="fa-solid fa-bottle-water categoria-icon"></i>';
+            } else if(data[i][0] == 1) {
+                icon = '<i class="fa-solid fa-candy-cane categoria-icon"></i>';
+            }else if (data[i][0] == 2) {
+                icon = '<i class="fa-solid fa-bowl-rice categoria-icon"></i>';
+            }else{
+                icon = '<i class="fa-solid fa-pizza-slice categoria-icon"></i>';
+            } 
+            for (let i = 0; i < data.length; i++) {
+                result += 
+                    '<div class="container-1 categoria-cont btn-cont">'+
+                        '<span class="cat-img-cont">'+
+                            icon
+                        '</span>'+
+                        '<div class="categoria-group">'+
+                            '<div class="categoria-title">'+data[i][1]+'</div>'+
+                            '<span class="categoria-info">Cantidad</span>'+
+                        '</div>'+
+                    '</div>'
+            }
+            $(".categorias").html(result);
+        }else{
+            alert(data);
+        }
+    })
+};
+
 //========= funcion capturar producto seleccionado ==========//
 function produCapt(num)
 {
     var id = document.getElementById('id'+num).innerHTML;
     var nombre = document.getElementById('nomProduc'+num).innerHTML;
     var precio = document.getElementById('precioProduc'+num).innerHTML;
-    $("#id_product").val(id);
+    $("#id_product").val(id); 
     $("#nom_product").val(nombre);
     $("#precio_product").val(precio);
     $("#buscar_produc").val("");
     $("#sel_produc").html("");
-}
-//===================================================================================//
-
-//===================================================================================//
+};
 //========= funcion listado de transacciones para guardar en base de datos =========// 
 function asignarValoresTransac(idProduc, producto, transaccion, lineaVenta, fecha, usuario, precio, cantidad )
 {
@@ -231,10 +291,7 @@ function asignarValoresTransac(idProduc, producto, transaccion, lineaVenta, fech
     $("#sel_produc").html("");
     $("#nom_product").val("");
     $("#cant_product").val("");
-}
-//===================================================================================//
-
-//===================================================================================//
+};
 //============ funcion guardar transacciones en base de datos ============// 
 function guardarTransacciones()
 {
@@ -264,12 +321,4 @@ function guardarTransacciones()
     }
     alert("Transacciones guardadas en base de datos");
     $("#transacciones").empty();
-}
-//===================================================================================//
-
-//================== funcion listar productos en vista ventas ==================//
-function listaProductos(filter){
-    $.ajax({
-        url: 'http: //localhost/tenderAppLocal/ajax/productoAjax.php?value'
-    })
-}
+};
