@@ -1,5 +1,9 @@
 # A-tender
-A-tender is an app for managing bars, grocery stores and restaurants 
+/En/
+A-tender is an all-in-one app for managing sales and operations of bars, grocery stores and restaurants. This app streamlines your business processes and help you to focus on what matters most - your customers.
+
+/Es/
+A-tender es una aplicacion todo en uno, para administracion de ventas y operaciones de bares, tiendas de abarrotes y restaurantes. Esta app optimiza el negocio en el que se utliza y le ayuda a enfocarse en lo mas importante, el cliente.  
 # Functions
+
 # Images
-image.png
