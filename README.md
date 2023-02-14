@@ -17,4 +17,8 @@ A-tender es una aplicacion todo en uno, para administracion de ventas y operacio
 # Functions
 
 # Images
-![Tapp](./vistas/assets/img/TApp-1.png)
+![A-tender/sales](./vistas/assets/img/TApp-1.png)
+ - Sales view
+
+![A-tender/config](./vistas/assets/img/)
+ - config view
